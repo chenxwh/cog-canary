@@ -1,0 +1,16 @@
+# Configuration for Cog ⚙️
+# Reference: https://github.com/replicate/cog/blob/main/docs/yaml.md
+
+build:
+  gpu: true
+  system_packages:
+    - ffmpeg
+    - libsndfile1
+  python_version: "3.10.12"
+  python_packages:
+    - Cython
+    - torch
+    - hf_transfer
+  run:
+    - pip install git+https://github.com/NVIDIA/NeMo.git@0bb9e66a6d29b28e8831d1d1dd8a30310173ce46#egg=nemo_toolkit[all]
+predict: "predict.py:Predictor"
